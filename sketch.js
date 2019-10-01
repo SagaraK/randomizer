@@ -1,6 +1,7 @@
 let randomIndex;
 let counter = 6;
 let clicked = 0;
+
 let roster = [{firstName:"Zainib", lastName:"Ahmed", color:"Blue", animal:"Giraffe", book:"The Book Thief", movie:"Amelie", game:"none", superHero:"The Hulk", randomFact:"I love to eat olives."},
 {firstName: "Toni",  lastName:"Anguiano",color:"blue", animal: "cat", book: "The Bell Jar", movie: "Horror",superHero: "batman", randomFact: "I like to hangout in cemeteries and research dark California history"},
 {firstName: "Camila",lastName: "Avina Garcia",color: "Green",animal:"Dog",book:"Match",movie:"Lady and the Tramp",game:" Guitar Hero",superHero:"Spiderman",randomFact:"I have a twin"},
@@ -25,19 +26,20 @@ let roster = [{firstName:"Zainib", lastName:"Ahmed", color:"Blue", animal:"Giraf
 
 function  setup() {
 createCanvas(800,800);
-background(200);
+background(random(255),random(255),random(255));
 textSize(64);
 text("Click to Start", 200, 400);
 }
 
 function draw() {
+
 }
 
 function countdown(){
-  background(200);
+  background(random(200),random(200),random(200));
   if(counter>=1){
     counter--;
-    text(counter,random(700),random(700));
+    text(counter,random(10,700),random(100,700));
     setTimeout(countdown,1000);
   } else {
     counter = 6;
@@ -48,7 +50,7 @@ function countdown(){
 
 function randomizer(){
   if(roster[0]){
-    background(200);
+    background(random(255),random(255),random(255));
     randomIndex = int(random(roster.length));
     text(roster[randomIndex].firstName,400,400);
     roster.splice(randomIndex,1);
